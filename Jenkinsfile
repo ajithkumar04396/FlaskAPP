@@ -1,29 +1,29 @@
 pipeline{
     agent any
         stages{
-            stage('Clone Repository'){
+            stage('Clone Repository...!'){
                 /*  cloning the repository to Jenkins workspace */
                 steps{
                     checkout scm
                 }
             }
-            stage('Install Dependencies'){
+            stage('Install Dependencies...!'){
                 /*  Install the dependencies from requirements.txt */
                 steps{
                     sh '''. venv/bin/activate && pip install -r requirements.txt'''
                    
                 }
             }
-            stage('Deploying and Restarting the service'){
+            stage('Deploying...!'){
                 /*  cloning the repository to Jenkins workspace */
                 steps{
-                    sh '''sudo service flaskApp restart'''
+                    sh '''sudo rm -dfr /home/ajith/Documents/Learnings/Python_Learning/Flask_/* && sudo cp -r /var/lib/jenkins/workspace/FlaskAppPipeLine/. /home/ajith/Documents/Learnings/Python_Learning/Flask_/'''
                 }
             }
-            stage('Deployment status'){
+            stage('Restarting the server...!'){
                 /*  cloning the repository to Jenkins workspace */
                 steps{
-                    echo '''Deployement Complete..'''
+                    sh ''' sudo service flaskApp restart '''
                 }
             }
         }
