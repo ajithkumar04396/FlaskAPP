@@ -2,7 +2,7 @@ pipeline{
     agent any
         stages{
             stage('Clone Repository'){
-                /*  cloning the repository to jenkins workspace */
+                /*  cloning the repository to Jenkins workspace */
                 steps{
                     checkout scm
                 }
@@ -10,21 +10,21 @@ pipeline{
             stage('Install Dependencies'){
                 /*  Install the dependencies from requirements.txt */
                 steps{
-                    sh 'sudo source /var/lib/jenkins/workspace/FlaskApp/venv/bin/activate'
-                    sh 'pip install -r /var/lib/jenkins/workspace/FlaskApp/requirements.txt'
+                    sh 'source /var/lib/jenkins/workspace/FlaskAppPipeLine/venv/bin/activate'
+                    sh 'pip install -r /var/lib/jenkins/workspace/FlaskAppPipeLine/requirements.txt'
                     sh 'deactivate'
                 }
             }
             stage('Deploying and Restarting the service'){
-                /*  cloning the repository to jenkins workspace */
+                /*  cloning the repository to Jenkins workspace */
                 steps{
-                    sh 'sudo service flaskApp restart'
+                    sh 'service flaskApp restart'
                 }
             }
             stage('Deployment status'){
-                /*  cloning the repository to jenkins workspace */
+                /*  cloning the repository to Jenkins workspace */
                 steps{
-                    echo 'Deployement Complete..'
+                    echo 'Deployment Complete..'
                 }
             }
         }
