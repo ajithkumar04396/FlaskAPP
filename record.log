@@ -146,3 +146,11 @@
 2023-12-21 13:12:56,803 WARNING app uWSGIWorker2Core0 : Warning level log
 2023-12-21 13:13:18,471 INFO app uWSGIWorker1Core0 : Info level log
 2023-12-21 13:13:18,471 WARNING app uWSGIWorker1Core0 : Warning level log
+2023-12-21 18:36:03,507 INFO app uWSGIWorker1Core0 : Info level log
+2023-12-21 18:36:03,517 WARNING app uWSGIWorker1Core0 : Warning level log
+2023-12-21 18:47:30,695 INFO app uWSGIWorker1Core0 : Info level log
+2023-12-21 18:47:30,696 WARNING app uWSGIWorker1Core0 : Warning level log
+2023-12-21 18:51:09,643 INFO app uWSGIWorker1Core0 : Info level log
+2023-12-21 18:51:09,643 WARNING app uWSGIWorker1Core0 : Warning level log
+2023-12-21 19:12:03,524 INFO app uWSGIWorker1Core0 : Info level log
+2023-12-21 19:12:03,524 WARNING app uWSGIWorker1Core0 : Warning level log

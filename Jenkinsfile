@@ -17,7 +17,7 @@ pipeline{
             stage('Deploying and Restarting the service'){
                 /*  cloning the repository to Jenkins workspace */
                 steps{
-                    sh '''service flaskApp restart'''
+                    sh '''sudo service flaskApp restart'''
                 }
             }
             stage('Deployment status'){
