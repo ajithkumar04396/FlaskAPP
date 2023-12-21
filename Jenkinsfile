@@ -19,7 +19,7 @@ pipeline{
                 steps{
                     sh '''sudo rm -dfr /home/ajith/Documents/Learnings/Python_Learning/Flask_/* && 
                     sudo cp -r /var/lib/jenkins/workspace/FlaskAppPipeLine/. /home/ajith/Documents/Learnings/Python_Learning/Flask_/ && 
-                    sudo chmod -R 777 /home/ajith/Documents/Learnings/Python_Learning/Flask'''
+                    sudo chmod -R 777 /home/ajith/Documents/Learnings/Python_Learning/Flask_'''
                 }
             }
             stage('Restarting the server...!'){
