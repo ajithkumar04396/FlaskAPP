@@ -17,9 +17,8 @@ pipeline{
             stage('Deploying...!'){
                 /*  cloning the repository to Jenkins workspace */
                 steps{
-                    sh '''sudo rm -dfr /home/ajith/Documents/Learnings/Python_Learning/Flask_/* && 
-                    sudo cp -r /var/lib/jenkins/workspace/FlaskAppPipeLine/. /home/ajith/Documents/Learnings/Python_Learning/Flask_/ && 
-                    sudo chmod -R 777 /home/ajith/Documents/Learnings/Python_Learning/Flask_'''
+                    sh ''' 
+                    sudo chmod -R 777 /var/lib/jenkins/workspace/FlaskAppPipeLine'''
                 }
             }
             stage('Restarting the server...!'){
