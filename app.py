@@ -8,9 +8,9 @@ app = Flask(__name__)
 def hello_world():
     app.logger.info('Info level log')
     app.logger.warning('Warning level log')
-    print("----------------Ok-----------------------")
     return "<p>Hello, World!</p>"
 
+from view import routes
 
 if __name__ == '__main__':
   app.run()
