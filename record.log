@@ -154,3 +154,85 @@
 2023-12-21 18:51:09,643 WARNING app uWSGIWorker1Core0 : Warning level log
 2023-12-21 19:12:03,524 INFO app uWSGIWorker1Core0 : Info level log
 2023-12-21 19:12:03,524 WARNING app uWSGIWorker1Core0 : Warning level log
+2023-12-23 10:00:40,022 ERROR app uWSGIWorker1Core0 : Exception on /view/index [GET]
+Traceback (most recent call last):
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ajith/Documents/Learnings/Python_Learning/FlaskRespository/FlaskAPP/./view/view.py", line 7, in index
+    app.logger.info('Rendering Index page...!')
+NameError: name 'app' is not defined
+2023-12-23 10:01:40,584 INFO app uWSGIWorker1Core0 : Rendering Index page...!
+2023-12-23 10:01:40,585 ERROR app uWSGIWorker1Core0 : Exception on /view/index [GET]
+Traceback (most recent call last):
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ajith/Documents/Learnings/Python_Learning/FlaskRespository/FlaskAPP/./view/view.py", line 8, in index
+    return render_template('index.html', utc_dt=datetime.datetime.utcnow())
+NameError: name 'render_template' is not defined
+2023-12-23 10:01:44,473 INFO app uWSGIWorker1Core0 : Rendering Index page...!
+2023-12-23 10:01:44,473 ERROR app uWSGIWorker1Core0 : Exception on /view/index [GET]
+Traceback (most recent call last):
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ajith/Documents/Learnings/Python_Learning/FlaskRespository/FlaskAPP/./view/view.py", line 8, in index
+    return render_template('index.html', utc_dt=datetime.datetime.utcnow())
+NameError: name 'render_template' is not defined
+2023-12-23 10:02:17,745 INFO app uWSGIWorker1Core0 : Rendering Index page...!
+2023-12-23 10:02:17,745 ERROR app uWSGIWorker1Core0 : Exception on /view/index [GET]
+Traceback (most recent call last):
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ajith/Documents/Learnings/Python_Learning/FlaskRespository/FlaskAPP/./view/view.py", line 8, in index
+    return render_template('index.html', utc_dt=datetime.datetime.utcnow())
+NameError: name 'datetime' is not defined
+2023-12-23 10:02:56,643 INFO app uWSGIWorker1Core0 : Rendering Index page...!
+2023-12-23 10:07:12,094 ERROR app uWSGIWorker1Core0 : Exception on /view/index [GET]
+Traceback (most recent call last):
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ajith/Documents/Learnings/Python_Learning/FlaskRespository/FlaskAPP/./view/routes/routes.py", line 7, in index
+    app.logger.info('Rendering Index page...!')
+NameError: name 'app' is not defined
+2023-12-23 10:07:32,001 INFO app uWSGIWorker1Core0 : Rendering Index page...!
+2023-12-23 10:09:43,882 INFO app uWSGIWorker1Core0 : Rendering Index page...!
+2023-12-23 10:09:45,124 INFO app uWSGIWorker1Core0 : Rendering Index page...!
