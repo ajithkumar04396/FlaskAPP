@@ -1,0 +1,19 @@
+services:
+  redis:
+    image: redislabs/redismod
+    container_name: flaskAppRedis
+    ports:
+      - '6379:6379'
+  flask:
+    build:
+      context: .
+    container_name: flaskApp
+    stop_signal: SIGINT
+    environment:
+      - REDIS_HOST=redis://redis:6379
+    ports:
+      - '4000:4000'
+    volumes:
+      - .:/var/www
+    depends_on:
+      - redis

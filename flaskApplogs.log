@@ -1,0 +1,1180 @@
+2023-12-25 17:33:25,098 INFO app uWSGIWorker1Core0 : Rendering Index page...!
+2023-12-25 19:55:28,315 INFO app uWSGIWorker1Core0 : Rendering Index page...!
+2023-12-25 19:55:31,726 INFO app uWSGIWorker1Core0 : Getting http headers...!
+2023-12-25 19:58:50,167 INFO flask-limiter uWSGIWorker1Core0 : ratelimit 20 per 1 day (127.0.0.1) exceeded at endpoint: restApi.validatorAbort
+2023-12-25 19:58:59,498 INFO flask-limiter uWSGIWorker1Core0 : ratelimit 20 per 1 day (127.0.0.1) exceeded at endpoint: restApi.validatorAbort
+2023-12-26 23:12:21,527 ERROR app MainThread : Exception on /rest-api/v1.0/validatorAbort [POST]
+Traceback (most recent call last):
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/home/ajith/Documents/Learnings/Python_Learning/Flask_/venv/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:22:41,692 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:23:31,590 ERROR app MainThread : Exception on /rest-api/v1.0/validatorAbort [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:23:33,429 ERROR app MainThread : Exception on /rest-api/v1.0/validatorAbort [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:24:21,978 ERROR app MainThread : Exception on /rest-api/v1.0/validatorAbort [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:26:10,909 INFO app MainThread : Rendering Index page...!
+2023-12-27 05:26:17,039 INFO app MainThread : Rendering Index page...!
+2023-12-27 05:26:48,768 ERROR app MainThread : Exception on /rest-api/v1.0/validatorAbort [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:28:23,905 ERROR app MainThread : Exception on /rest-api/v1.0/validatorAbort [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:28:33,793 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:28:55,634 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:28:57,120 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:28:58,006 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:28:58,824 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:28:59,968 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:30:58,501 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:31:16,211 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:33:36,634 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:34:30,821 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 0.0.0.0:6379. Connection refused.
+2023-12-27 05:37:21,269 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 05:40:35,019 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 08:09:15,737 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 08:23:36,013 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+  File "/usr/local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 627, in _connect
+    raise err
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1294, in __inner
+    self.limiter._check_request_limit(
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1168, in _check_request_limit
+    raise e
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1149, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1086, in __evaluate_limits
+    if not method(lim.limit, *args, **kwargs):
+  File "/usr/local/lib/python3.8/site-packages/limits/strategies.py", line 138, in hit
+    self.storage.incr(
+  File "/usr/local/lib/python3.8/site-packages/limits/storage/redis.py", line 198, in incr
+    return int(self.lua_incr_expire([key], [expiry, amount]))
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5931, in __call__
+    return client.evalsha(self.sha, len(keys), *args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5307, in evalsha
+    return self._evalsha("EVALSHA", sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/commands/core.py", line 5291, in _evalsha
+    return self.execute_command(command, sha, numkeys, *keys_and_args)
+  File "/usr/local/lib/python3.8/site-packages/redis/client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 1291, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.8/site-packages/redis/connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+2023-12-27 08:36:16,756 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+  File "/usr/local/lib/python3.8/site-packages/flask_validate_json/validatejson.py", line 25, in wrapper
+    return func(*args, **kw)
+  File "/var/www/restApi/api/api.py", line 23, in validator
+    return {"status": True, "data": request.json()}
+TypeError: 'dict' object is not callable
+2023-12-27 08:38:44,325 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+  File "/usr/local/lib/python3.8/site-packages/flask_validate_json/validatejson.py", line 25, in wrapper
+    return func(*args, **kw)
+  File "/var/www/restApi/api/api.py", line 23, in validator
+    app.logger.info(request.json())
+TypeError: 'dict' object is not callable
+2023-12-27 08:40:07,759 INFO app MainThread : b'{\n    "name": "ajith"\n}'
+2023-12-27 08:40:07,759 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+  File "/usr/local/lib/python3.8/site-packages/flask_validate_json/validatejson.py", line 25, in wrapper
+    return func(*args, **kw)
+  File "/var/www/restApi/api/api.py", line 24, in validator
+    return {"status": True, "data": request.json()}
+TypeError: 'dict' object is not callable
+2023-12-27 08:40:59,459 INFO app MainThread : b'{\n    "name": "ajith"\n}'
+2023-12-27 08:40:59,461 ERROR app MainThread : Exception on /rest-api/v1.0/validator [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.8/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.8/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/usr/local/lib/python3.8/site-packages/flask_limiter/extension.py", line 1298, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+  File "/usr/local/lib/python3.8/site-packages/flask_validate_json/validatejson.py", line 25, in wrapper
+    return func(*args, **kw)
+  File "/var/www/restApi/api/api.py", line 24, in validator
+    return {"status": True, "data": request.data['name']}
+TypeError: byte indices must be integers or slices, not str
+2023-12-27 08:42:11,889 INFO app MainThread : {'name': 'ajith'}
+2023-12-27 08:42:33,755 INFO app MainThread : {'name': 'ajith'}
+2023-12-27 12:33:41,859 INFO app MainThread : Rendering Index page...!
