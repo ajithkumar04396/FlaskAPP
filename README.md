@@ -1,2 +1,8 @@
 # FlaskAPP
-This is a basic flask app for performing CICD pipeline using Jenkins
+This is a basic flask App with Redis for performing CICD pipeline using Jenkins
+
+**Deployment-**
+  _systemd.service in Ubuntu_
+  _Docker_
+  
+  
