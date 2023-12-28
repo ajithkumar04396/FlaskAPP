@@ -3,7 +3,7 @@ This is a basic flask App with Redis for performing CICD pipeline using Jenkins
 
 **Deployment-**
 
-  _systemd.service in Ubuntu_ 
-  _Docker_
+\t_-systemd.service in Ubuntu_ 
+\t_-Docker_
   
   
