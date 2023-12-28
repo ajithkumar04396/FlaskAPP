@@ -7,24 +7,17 @@ pipeline{
                     checkout scm
                 }
             }
-            stage('Install Dependencies...!'){
-                /*  Install the dependencies from requirements.txt */
-                steps{
-                    sh '''. venv/bin/activate && pip install -r requirements.txt'''
-                   
-                }
-            }
-            stage('Deploying...!'){
+            stage('Add Permission...!'){
                 /*  cloning the repository to Jenkins workspace */
                 steps{
                     sh ''' 
-                    sudo chmod -R 777 /var/lib/jenkins/workspace/FlaskAppPipeLine'''
+                    sudo chmod -R 777 /var/lib/jenkins/workspace/FlaskAppPipeLineDocker'''
                 }
             }
-            stage('Restarting the server...!'){
+            stage('Build && Deploya using Docker!'){
                 /*  cloning the repository to Jenkins workspace */
                 steps{
-                    sh ''' sudo service flaskApp restart '''
+                    sh '''. sudo docker compose up -d'''
                 }
             }
         }
