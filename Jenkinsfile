@@ -17,7 +17,7 @@ pipeline{
             stage('Build && Deploya using Docker!'){
                 /*  cloning the repository to Jenkins workspace */
                 steps{
-                    sh '''. sudo docker compose up -d'''
+                    sh '''sudo docker compose up -d'''
                 }
             }
         }
